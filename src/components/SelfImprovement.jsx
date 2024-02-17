@@ -1,0 +1,121 @@
+/* eslint-disable react/no-unescaped-entities */
+import styled from "styled-components"
+import sadFace from '../assets/sadface.png'
+import { FaCircle } from "react-icons/fa";
+
+const data = [
+    {
+      id: 1,
+      head: "Lorem Ipsum",
+      para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      id: 2,
+      head: "Dolor Sit",
+      para: "Duis aute irure dolor in reprehenderit in voluptate velit."
+    },
+    {
+      id: 3,
+      head: "Consectetur Adipiscing",
+      para: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      id: 4,
+      head: "Elit Sed",
+      para: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      id: 5,
+      head: "Tempor Incididunt",
+      para: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    }
+  ];
+    
+
+export default function SelfImprovement() {
+  return (
+    <Container>
+        <p>Wrong with self-improvment & how we're fixing it</p>
+        <div>
+            <h1>Self-improvement. Ugh.</h1>
+            <img src={sadFace} alt="img" />
+        </div>
+        <ul>
+            {data.map((each)=>{
+                return(
+                    <li key={each.id}>
+                        <h2><FaCircleIcon/> {each.head}</h2>
+                        <p>{each.para}</p>
+                    </li>
+                )
+            })}
+        </ul>
+    </Container>
+)
+}
+
+const Container = styled.div`
+  min-height: 150vh;
+  background-color: #fff;
+  padding: 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  p{
+    font-size: 1.5rem;
+    margin: 0px;
+    font-weight: 500;
+    /* color: #000000bc; */
+  }
+  div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    h1{
+        font-size: 3.5rem;
+        font-weight: 800;
+    }
+  }
+  ul{
+    padding-left: 0px;
+    width: 90%;
+    list-style-type:none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    padding: 2rem 0;
+    padding-top: 25rem;
+    margin-top: 2rem;
+    height: 25rem;
+    overflow-y: auto;
+    li{
+        width: 60%;
+        margin: .4rem 0;
+        padding: .6rem;
+        color: #7c7c7c;
+        cursor: pointer;
+        &:hover{
+            color: #000;
+        }
+        h2{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        p{
+            margin-left: 2.5rem;
+        }
+    }
+  }
+`
+
+const FaCircleIcon = styled(FaCircle)`
+    color: #6340EF;
+    font-size: 2rem;
+    margin-right: 8px; 
+    border: 6px solid #F0EEFC;
+    border-radius: 50%;
+`

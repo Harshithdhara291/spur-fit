@@ -1,0 +1,8 @@
+body{
+  font-family: "Fredoka", sans-serif !important;
+}
+
+.bg-body-tertiary {
+  --bs-bg-opacity: 1;
+  background-color: #fff!important;
+}
