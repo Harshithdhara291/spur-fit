@@ -89,7 +89,7 @@ const Container = styled.div`
     min-height: 100vh;
     background-color: #fff;
     padding: 2rem;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: center ;
@@ -101,6 +101,7 @@ const Container = styled.div`
         overflow-x: auto;
          white-space: nowrap;
         padding-left: 0px;
+        padding: 2rem 0;
         gap: 2rem;
     }
     h1{

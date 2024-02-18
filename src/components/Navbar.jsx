@@ -1,4 +1,4 @@
-import logoImage from '../assets/logoemoji.avif'
+import logoImage from '../assets/app-logo.png'
 import styled from 'styled-components'
 
 export default function Navbar() {
@@ -33,8 +33,8 @@ export default function Navbar() {
 
 const Image = styled.img`
     height: 4rem;
-    width: 4.5rem;
-    border-radius: 8px;
+    width: 4rem;
+    border-radius: 1rem;
 `
 
 const Container = styled.div`
@@ -54,9 +54,10 @@ const Ullist = styled.ul`
 `
 
 const Button = styled.ul`
-    background-color: #000;
+    background-color: #1d1d1d;
     padding: .8rem 1rem;
     color: #fff;
     border-radius: 30px;
     cursor: pointer;
+    border: none;
 `

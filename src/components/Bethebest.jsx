@@ -25,7 +25,7 @@ const Container = styled.div`
   justify-content: space-around;
   padding: 3rem 2rem;
   padding-top: 15rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   p{
     width: 30%;
     font-size: 1.3rem;

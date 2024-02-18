@@ -6,6 +6,11 @@ import Slides from "../components/Slides"
 import MeetAhead from "../components/MeetAhead"
 import SelfImprovement from "../components/SelfImprovement"
 import BetheBest from "../components/Bethebest"
+import FlowCharts from "../components/FlowCharts"
+import Test from "../components/Test"
+import WorkWithUs from "../components/WorkWithUs"
+import OpenVacancies from "../components/OpenVacancies"
+import Footer from "../components/Footer"
 
 export default function Home() {
   return (
@@ -17,6 +22,11 @@ export default function Home() {
       <MeetAhead/>
       <SelfImprovement/>
       <BetheBest/>
+      <FlowCharts/>
+      <Test/>
+      <WorkWithUs/>
+      <OpenVacancies/>
+      <Footer/>
     </Container>
   )
 }
