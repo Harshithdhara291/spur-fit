@@ -44,11 +44,22 @@ const Container = styled.div`
     justify-content: space-around;
     padding: 3rem 2rem;
     padding-top: 8rem;
+    @media (max-width: 991px) {
+      display: flex;
+      flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 1rem;
+  }
   }
   /* border: 1px solid red; */
   p{
     width: 30%;
     font-size: 1.3rem;
     color: #686868;
+    @media (max-width: 991px) {
+      width: 100%;
+      margin: 1.5rem 0;
+  }
   }
 `;

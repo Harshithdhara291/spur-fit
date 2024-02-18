@@ -1,45 +1,44 @@
 /* eslint-disable react/no-unescaped-entities */
-import styled from "styled-components"
-import sadFace from '../assets/sadface.png'
+import styled from "styled-components";
+import sadFace from "../assets/sadface.png";
 import { FaCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const data = [
-    {
-      id: 1,
-      head: "Lorem Ipsum",
-      para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    },
-    {
-      id: 2,
-      head: "Dolor Sit",
-      para: "Duis aute irure dolor in reprehenderit in voluptate velit."
-    },
-    {
-      id: 3,
-      head: "Consectetur Adipiscing",
-      para: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      id: 4,
-      head: "Elit Sed",
-      para: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    },
-    {
-      id: 5,
-      head: "Tempor Incididunt",
-      para: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-    }
-  ];
-    
+  {
+    id: 1,
+    head: "Lorem Ipsum",
+    para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    id: 2,
+    head: "Dolor Sit",
+    para: "Duis aute irure dolor in reprehenderit in voluptate velit.",
+  },
+  {
+    id: 3,
+    head: "Consectetur Adipiscing",
+    para: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id: 4,
+    head: "Elit Sed",
+    para: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  },
+  {
+    id: 5,
+    head: "Tempor Incididunt",
+    para: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+];
 
 export default function SelfImprovement() {
   return (
     <Container>
       <motion.div
-      className="top"
+        className="top"
         initial={{ x: -200, opacity: 0 }}
-        whileInView={{x:0,opacity:1}}
+        whileInView={{ x: 0, opacity: 1 }}
         transition={{
           delay: 0.2,
           type: "spring",
@@ -51,13 +50,13 @@ export default function SelfImprovement() {
       >
         <p>Wrong with self-improvment & how we're fixing it</p>
         <div>
-            <h1>Self-improvement. Ugh.</h1>
-            <img src={sadFace} alt="img" />
+          <h1>Self-improvement. Ugh.</h1>
+          <img src={sadFace} alt="img" />
         </div>
-        </motion.div>
-        <motion.ul
+      </motion.div>
+      <motion.ul
         initial={{ y: 200, opacity: 0 }}
-        whileInView={{y:0,opacity:1}}
+        whileInView={{ y: 0, opacity: 1 }}
         transition={{
           delay: 0.2,
           type: "spring",
@@ -66,18 +65,20 @@ export default function SelfImprovement() {
           ease: "easeIn",
           duration: 1,
         }}
-        >
-            {data.map((each)=>{
-                return(
-                    <li key={each.id}>
-                        <h2><FaCircleIcon/> {each.head}</h2>
-                        <p>{each.para}</p>
-                    </li>
-                )
-            })}
-        </motion.ul>
+      >
+        {data.map((each) => {
+          return (
+            <li key={each.id}>
+              <h2>
+                <FaCircleIcon /> {each.head}
+              </h2>
+              <p>{each.para}</p>
+            </li>
+          );
+        })}
+      </motion.ul>
     </Container>
-)
+  );
 }
 
 const Container = styled.div`
@@ -88,31 +89,41 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  @media (max-width: 991px) {
+    min-height: 120vh;
+    padding: 0px;
+  }
   .top {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
   }
-  p{
+  p {
     font-size: 1.5rem;
     margin: 0px;
     font-weight: 500;
     /* color: #000000bc; */
   }
-  div{
+  div {
     display: flex;
     justify-content: flex-start;
     align-items: end;
-    h1{
-        font-size: 3.5rem;
-        font-weight: 800;
+    p {
+      font-size: 1.2rem;
+    }
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      @media (max-width: 991px) {
+        font-size: 1.6rem;
+      }
     }
   }
-  ul{
+  ul {
     padding-left: 0px;
     width: 90%;
-    list-style-type:none;
+    list-style-type: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -124,40 +135,51 @@ const Container = styled.div`
     height: 25rem;
     overflow-y: auto;
     &::-webkit-scrollbar {
-    width: 8px; 
-  }
-  &::-webkit-scrollbar-track {
-    background: #e4e4e4; 
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #B3A0FA; 
-    border-radius: 5px; 
-  }
-    li{
-        width: 60%;
-        margin: .4rem 0;
-        padding: .6rem;
-        color: #7c7c7c;
-        cursor: pointer;
-        &:hover{
-            color: #000;
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #e4e4e4;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #b3a0fa;
+      border-radius: 5px;
+    }
+    @media (max-width: 991px) {
+      width: 100%;
+      padding-top: 20rem;
+    }
+    li {
+      width: 60%;
+      margin: 0.4rem 0;
+      padding: 0.6rem;
+      color: #7c7c7c;
+      cursor: pointer;
+      @media (max-width: 991px) {
+        width: 100%;
+      }
+      &:hover {
+        color: #000;
+      }
+      h2 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      p {
+        margin-left: 2.5rem;
+        @media (max-width: 991px) {
+          font-size: 1rem;
+          margin-left: 3rem;
         }
-        h2{
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-        }
-        p{
-            margin-left: 2.5rem;
-        }
+      }
     }
   }
-`
+`;
 
 const FaCircleIcon = styled(FaCircle)`
-    color: #6340EF;
-    font-size: 2rem;
-    margin-right: 8px; 
-    border: 6px solid #F0EEFC;
-    border-radius: 50%;
-`
+  color: #6340ef;
+  font-size: 2rem;
+  margin-right: 8px;
+  border: 6px solid #f0eefc;
+  border-radius: 50%;
+`;

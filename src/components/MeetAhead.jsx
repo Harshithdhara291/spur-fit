@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function MeetAhead() {
   return (
-    <Container>
+    <Container id="manifesto">
       <ImageCont>
         <img src={flower} alt="not-found" />
       </ImageCont>
@@ -29,31 +29,30 @@ export default function MeetAhead() {
 
         <div>
           <motion.div
-          initial={{ x: -200, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.2,
-            type: "spring",
-            stiffness: 60,
-            opacity: { duration: 1 },
-            ease: "easeIn",
-            duration: 1,
-          }}
+            initial={{ x: -200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.2,
+              type: "spring",
+              stiffness: 60,
+              opacity: { duration: 1 },
+              ease: "easeIn",
+              duration: 1,
+            }}
           >
-          <img src={cartoons} alt="not-found" 
-          
-          /></motion.div>
+            <img src={cartoons} alt="not-found" />
+          </motion.div>
           <motion.div
-          initial={{ y: 200, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{
-            delay: 0.2,
-            type: "spring",
-            stiffness: 60,
-            opacity: { duration: 1 },
-            ease: "easeIn",
-            duration: 1,
-          }}
+            initial={{ y: 200, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              delay: 0.2,
+              type: "spring",
+              stiffness: 60,
+              opacity: { duration: 1 },
+              ease: "easeIn",
+              duration: 1,
+            }}
           >
             <p>
               Sed faucibus mauris id est fermentum, id rhoncus nunc sagittis.
@@ -84,7 +83,7 @@ const Container = styled.div`
 const SecondContainer = styled.div`
   /* border: 1px solid red; */
   margin-top: 5rem;
-  height: 35rem;
+  min-height: 35rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -98,9 +97,15 @@ const SecondContainer = styled.div`
   p {
     margin: 0px;
     font-size: 1.5rem;
+    @media (max-width: 991px) {
+      font-size: 1.2rem;
+    }
   }
   h2 {
     font-size: 4rem;
+    @media (max-width: 991px) {
+      font-size: 2.5rem;
+    }
   }
   div {
     display: flex;
@@ -108,10 +113,21 @@ const SecondContainer = styled.div`
     align-items: center;
     width: 100%;
     padding-right: 3rem;
+    @media (max-width: 991px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-right: 0px;
+    }
     img {
       height: 20rem;
       width: 30rem;
       /* mix-blend-mode: multiply; */
+      @media (max-width: 991px) {
+        height: 12rem;
+      width: 16rem;
+    }
     }
     div {
       display: flex;
@@ -119,6 +135,9 @@ const SecondContainer = styled.div`
       justify-content: space-evenly;
       align-items: flex-start;
       width: 50%;
+      @media (max-width: 991px) {
+      width: 100%;
+    }
     }
     p {
       margin: 6px 0;
@@ -138,4 +157,8 @@ const ImageCont = styled.div`
     width: 8rem;
     mix-blend-mode: multiply;
   }
+  @media (max-width: 991px) {
+      display: none;
+    }
+  
 `;

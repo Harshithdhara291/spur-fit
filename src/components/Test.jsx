@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Test() {
     return (
-        <Container>
+        <Container id="self">
             <motion.div
             initial={{ x: -200, opacity: 0 }}
             whileInView={{x:0,opacity:1}}

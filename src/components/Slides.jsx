@@ -69,7 +69,7 @@ const getrandomcolor = () => {
 
 export default function Slides() {
   return (
-    <Container>
+    <Container id="emotions">
       <motion.div
         initial={{ x: -200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -138,6 +138,12 @@ const Container = styled.div`
     display: flex;
     align-items: flex-end;
     margin-bottom: 1rem;
+    @media (max-width: 991px) {
+      display: flex;
+      justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+  }
   }
 `;
 
@@ -168,4 +174,7 @@ const FcAndroidOsIcon = styled(FcAndroidOs)`
   border: 4px solid #7cb342a9;
   border-radius: 2.5rem;
   transform: rotate(-30deg);
+  @media (max-width: 991px) {
+    margin-left: 0;
+  }
 `;

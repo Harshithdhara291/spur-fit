@@ -32,20 +32,35 @@ export default function EQbeatsIQ() {
 }
 
 const Container = styled.div`
-  height: 80vh;
+  min-height: 80vh;
   background-color: #fff;
   padding-top: 10rem;
+  @media (max-width: 991px) {
+    min-height: 60vh;
+  }
   div {
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
     padding: 3rem 2rem;
     padding-top: 8rem;
+    @media (max-width: 991px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+  }
   }
   /* border: 1px solid red; */
   p {
     width: 30%;
     font-size: 1.3rem;
     color: #686868;
+    @media (max-width: 991px) {
+    width: 90%;
+    text-align: center;
+    margin: 1rem 0;
+  }
   }
 `;
