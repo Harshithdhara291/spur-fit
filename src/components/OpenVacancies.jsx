@@ -1,9 +1,33 @@
 import styled from "styled-components"
+import { motion } from "framer-motion";
 
 export default function OpenVacancies() {
     return (
         <Container>
-          <h1>Open vacancies</h1>
+          <motion.h1
+          initial={{ y: -200, opacity: 0 }}
+          whileInView={{y:0,opacity:1}}
+          transition={{
+            delay: 0.2,
+            type: "spring",
+            stiffness: 60,
+            opacity: { duration: 1 },
+            ease: "easeIn",
+            duration: 1,
+          }}
+          >Open vacancies</motion.h1>
+          <motion.div className="ul-list"
+          initial={{ y: 200, opacity: 0 }}
+          whileInView={{y:0,opacity:1}}
+          transition={{
+            delay: 0.2,
+            type: "spring",
+            stiffness: 60,
+            opacity: { duration: 1 },
+            ease: "easeIn",
+            duration: 1,
+          }}
+          >
           <UlContainer>
             <li className="each-li">
                 <h2>Senior Full-Stack Engineer</h2>
@@ -33,20 +57,24 @@ export default function OpenVacancies() {
                 </ul>
             </li>
           </UlContainer>
+          </motion.div>
+          
         </Container>
       )
     }
     
 const Container = styled.div`
-    min-height: 90vh;
+    min-height: 120vh;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     /* border: 1px solid red; */
-    padding-left:4rem;
-    padding-top: 2rem;
+    padding: 10rem 0 10rem 4rem;
+    .ul-list{
+        width: 90%;
+    }
     h1{
         font-size: 4rem;
     }
@@ -61,7 +89,7 @@ const UlContainer = styled.ul`
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 2rem;
-    width: 90%;
+    
     padding: 1rem 0;
     .each-li{
         background-color: #fef7f1;

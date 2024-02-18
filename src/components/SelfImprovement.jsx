@@ -2,6 +2,7 @@
 import styled from "styled-components"
 import sadFace from '../assets/sadface.png'
 import { FaCircle } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const data = [
     {
@@ -35,12 +36,37 @@ const data = [
 export default function SelfImprovement() {
   return (
     <Container>
+      <motion.div
+      className="top"
+        initial={{ x: -200, opacity: 0 }}
+        whileInView={{x:0,opacity:1}}
+        transition={{
+          delay: 0.2,
+          type: "spring",
+          stiffness: 60,
+          opacity: { duration: 1 },
+          ease: "easeIn",
+          duration: 1,
+        }}
+      >
         <p>Wrong with self-improvment & how we're fixing it</p>
         <div>
             <h1>Self-improvement. Ugh.</h1>
             <img src={sadFace} alt="img" />
         </div>
-        <ul>
+        </motion.div>
+        <motion.ul
+        initial={{ y: 200, opacity: 0 }}
+        whileInView={{y:0,opacity:1}}
+        transition={{
+          delay: 0.2,
+          type: "spring",
+          stiffness: 60,
+          opacity: { duration: 1 },
+          ease: "easeIn",
+          duration: 1,
+        }}
+        >
             {data.map((each)=>{
                 return(
                     <li key={each.id}>
@@ -49,7 +75,7 @@ export default function SelfImprovement() {
                     </li>
                 )
             })}
-        </ul>
+        </motion.ul>
     </Container>
 )
 }
@@ -62,6 +88,12 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  .top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
   p{
     font-size: 1.5rem;
     margin: 0px;
@@ -91,6 +123,16 @@ const Container = styled.div`
     margin-top: 2rem;
     height: 25rem;
     overflow-y: auto;
+    &::-webkit-scrollbar {
+    width: 8px; 
+  }
+  &::-webkit-scrollbar-track {
+    background: #e4e4e4; 
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #B3A0FA; 
+    border-radius: 5px; 
+  }
     li{
         width: 60%;
         margin: .4rem 0;

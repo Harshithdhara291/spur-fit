@@ -1,28 +1,42 @@
 /* eslint-disable react/no-unescaped-entities */
 import styled from "styled-components"
+import { motion } from "framer-motion";
 
 export default function Test() {
     return (
         <Container>
-          <p className="para1" >We take privacy seriously</p>
-          <h2>Before you get started</h2>
-          <p className="para2" >"We wont share your answers with anyone ( and wont tell<br/> your which friend told about you) "</p>
-          <p className="para3" >with love, <span>Team ahead</span></p>
-          <button>Start a test</button>
-          <p className="para4" >Take only 5 minutes</p>
+            <motion.div
+            initial={{ x: -200, opacity: 0 }}
+            whileInView={{x:0,opacity:1}}
+            transition={{
+              delay: 0.2,
+              type: "spring",
+              stiffness: 60,
+              opacity: { duration: 1 },
+              ease: "easeIn",
+              duration: 1,
+            }}
+            >
+            <p className="para1" >We take privacy seriously</p>
+            <h2>Before you get started</h2>
+            <p className="para2" >"We wont share your answers with anyone ( and wont tell<br/> your which friend told about you) "</p>
+            <p className="para3" >with love, <span>Team ahead</span></p>
+            <button>Start a test</button>
+            <p className="para4" >Take only 5 minutes</p>
+          </motion.div>
         </Container>
       )
     }
     
 const Container = styled.div`
-    min-height: 100vh;
+    min-height: 130vh;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top:8rem;
+    padding:8rem 0;
     h2{
         font-size: 2.8rem;
         color: #000;

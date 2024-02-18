@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import happyFace from "../assets/happyface.png";
+import { motion } from "framer-motion";
 
 const dataArray = [
   {
@@ -32,6 +33,18 @@ const dataArray = [
 export default function WorkWithUs() {
   return (
     <Container>
+      <motion.div className="left"
+      initial={{ x: -200, opacity: 0 }}
+      whileInView={{x:0,opacity:1}}
+      transition={{
+        delay: 0.2,
+        type: "spring",
+        stiffness: 60,
+        opacity: { duration: 1 },
+        ease: "easeIn",
+        duration: 1,
+      }}
+      >
       <LeftContainer>
         <h1>Work with us</h1>
         <AboutContainer>
@@ -53,6 +66,19 @@ export default function WorkWithUs() {
           </div>
         </AboutContainer>
       </LeftContainer>
+      </motion.div>
+      <motion.div className="right"
+      initial={{ y: -200, opacity: 0 }}
+      whileInView={{y:0,opacity:1}}
+      transition={{
+        delay: 0.2,
+        type: "spring",
+        stiffness: 60,
+        opacity: { duration: 1 },
+        ease: "easeIn",
+        duration: 1,
+      }}
+      >
       <RightContainer>
         <h1>ahead</h1>
         <ScrollContainer>
@@ -68,6 +94,8 @@ export default function WorkWithUs() {
           }
         </ScrollContainer>
       </RightContainer>
+      </motion.div>
+      
     </Container>
   );
 }
@@ -80,12 +108,19 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  .left{
+    width: 50%;
+  height: 30rem;
+  
+  }
+  .right{
+    width: 35%;
+    height: 45rem;
+  }
 `;
 
 const LeftContainer = styled.div`
   /* border: 1px solid red; */
-  width: 50%;
-  height: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -122,7 +157,6 @@ const AboutContainer = styled.div`
 
 const RightContainer = styled.div`
   /* border: 1px solid red; */
-  width: 35%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

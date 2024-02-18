@@ -1,12 +1,38 @@
 import styled from "styled-components"
 import numbers from '../assets/numbers.png'
 import anonymous from '../assets/anonymous.png'
+import { motion } from "framer-motion"
 
 export default function FlowCharts() {
     return (
         <Container>
-          <p>Let your friends, family, co-workers (anonymously) rate our social skills</p>
-          <h1>Ever wondered what others think of you ?</h1>
+            <motion.div style={{textAlign:"center"}}
+            initial={{ x: -200, opacity: 0 }}
+            whileInView={{x:0,opacity:1}}
+            transition={{
+              delay: 0.2,
+              type: "spring",
+              stiffness: 60,
+              opacity: { duration: 1 },
+              ease: "easeIn",
+              duration: 1,
+            }}
+            >
+                <p>Let your friends, family, co-workers (anonymously) rate our social skills</p>
+                <h1>Ever wondered what others think of you ?</h1>
+            </motion.div>
+          <motion.div
+          initial={{ x: 90, opacity: 0 }}
+          whileInView={{x:0,opacity:1}}
+          transition={{
+            delay: 0.2,
+            type: "spring",
+            stiffness: 60,
+            opacity: { duration: 1 },
+            ease: "easeIn",
+            duration: 1,
+          }}
+          >
           <NumsCont>
             <img src={numbers} alt="img" />
             <div>
@@ -15,7 +41,22 @@ export default function FlowCharts() {
                 <p>Find out hwere you and others see things on the same way - and where not!</p>
             </div>
           </NumsCont>
-          <img src={anonymous} alt="img" />
+          </motion.div>
+          <motion.div
+          initial={{ x: -200, opacity: 0 }}
+          whileInView={{x:0,opacity:1}}
+          transition={{
+            delay: 0.2,
+            type: "spring",
+            stiffness: 60,
+            opacity: { duration: 1 },
+            ease: "easeIn",
+            duration: 1,
+          }}
+          >
+            <img src={anonymous} alt="img" />
+          </motion.div>
+          
         </Container>
       )
     }
